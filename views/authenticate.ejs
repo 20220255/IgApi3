@@ -1,0 +1,23 @@
+<% layout('./layouts/boilerplate') %>
+
+<h1>Authenticate Test User</h1>
+<form action="/insta/testuser/authenticate" method="post" class="needs-validation" >
+    <div class="mb-3">
+        <label for="client_id" class="form-label" >Client ID:</label>
+        <input class="form-control"  type="text" name="client_id" id="client_id" placeholder="Enter username" required>
+    </div>
+    <div class="mb-3">
+        <label for="redirect_uri" class="form-label">Redirect URI:</label>
+        <input class="form-control"  type="text" name="redirect_uri" id="redirect_uri" placeholder="Enter email" required>
+    </div>
+    <div class="mb-3">
+        <label for="scope" class="form-label">Scope:</label>
+        <input class="form-control"  type="text" name="scope" id="scope" placeholder="Enter password" required>
+    </div>
+    <div class="mb-3">
+        <label for="response_type" class="form-label">Response Type:</label>
+        <input class="form-control"  type="text" name="response_type" id="response_type" placeholder="Enter password" required>
+    </div>
+
+    <button class="btn btn-success">Authenticate</button>
+</form>
