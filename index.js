@@ -7,6 +7,7 @@ const fs = require('fs')
 const { default: axios } = require('axios')
 const openBrowser = require('react-dev-utils/openBrowser')
 const FormData = require('form-data')
+require('dotenv').config();
 
 const httpsOptions = {
     key: fs.readFileSync('./config/cert.key'),
@@ -48,6 +49,7 @@ app.get('/InstaApi/Auth', async(req, res) => {
         const code = req.query.code
         console.log(code)
 
+
         const form = new FormData();
         form.append('client_id', process.env.CLIENT_ID);
         form.append('client_secret', process.env.CLIENT_SECRET);
@@ -65,7 +67,7 @@ app.get('/InstaApi/Auth', async(req, res) => {
           }
         );
         
-        // const { access_token, user_id } = response.data
+        const { access_token, user_id } = response.data
 
         // console.log(response.data)
 
